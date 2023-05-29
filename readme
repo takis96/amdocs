@@ -1,0 +1,2 @@
+To run the implementation you need first to create a database (MySQL or MariaDB) and a user with all privileges and update the .env file.
+Then run php artisan migrate.
