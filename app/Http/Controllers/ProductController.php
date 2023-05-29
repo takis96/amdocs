@@ -51,10 +51,10 @@ class ProductController extends Controller
 
     private function broadcastProductChanges($action, $product)
     {
-        // Replace this with the actual webhook URLs of your external systems
+        //There I would put the actual webhook URLs of the external systems
         $externalSystems = [
-            'http://example.com/webhook1',
-            'http://example.com/webhook2',
+            //'http://example.com/webhook1',
+            //'http://example.com/webhook2',
             // Add more webhook URLs here
         ];
 
@@ -71,11 +71,9 @@ class ProductController extends Controller
                 // Send the payload to the external system's webhook URL
                 $response = $client->post($url, ['json' => $payload]);
 
-                // Handle the response if necessary
                  $statusCode = $response->getStatusCode();
                  $responseData = $response->getBody()->getContents();
             } catch (RequestException $e) {
-                // Handle any request errors
                  $statusCode = $e->getResponse()->getStatusCode();
                  $errorMessage = $e->getMessage();
             }
